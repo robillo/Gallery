@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    protected void onClick(View view) {
+    protected void onClick(View v) {
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(i, RESULT_LOAD_IMAGE);
     }

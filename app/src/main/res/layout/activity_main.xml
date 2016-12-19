@@ -11,18 +11,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.appbusters.robinkamboj.gallery.MainActivity">
-    <Button
-        android:text="Upload An Image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/button"
-        android:onClick="onClick"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -35,5 +23,20 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/button"
-        android:elevation="4dp"/>
+        android:elevation="4dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="fitXY"/>
+
+    <Button
+        android:text="Upload An Image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button"
+        android:onClick="onClick"/>
 </RelativeLayout>
