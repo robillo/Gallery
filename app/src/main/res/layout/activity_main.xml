@@ -11,7 +11,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.appbusters.robinkamboj.gallery.MainActivity">
-
     <Button
         android:text="Upload An Image"
         android:layout_width="wrap_content"
@@ -22,7 +21,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/button"/>
+        android:background="@drawable/button"
+        android:onClick="onClick"/>
 
     <ImageView
         android:layout_width="wrap_content"
