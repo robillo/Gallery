@@ -15,7 +15,6 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        app:srcCompat="@android:drawable/ic_menu_report_image"
         android:layout_alignParentTop="true"
         android:id="@+id/imageView"
         android:layout_alignParentRight="true"
