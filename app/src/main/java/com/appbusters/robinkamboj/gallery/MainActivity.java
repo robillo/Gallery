@@ -1,10 +1,15 @@
 package com.appbusters.robinkamboj.gallery;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,11 +19,30 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
     private static int RESULT_LOAD_IMAGE=1;
+    private static final int MY_PERMISSIONS= 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String[] permissions={Manifest.permission.READ_EXTERNAL_STORAGE};
+
+        if(!hasPermissions(this, permissions)){
+            ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
+        }
+    }
+
+    //Permissions Helper Method
+    public static boolean hasPermissions(Context context, String[] permissions){
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            for(String permission : permissions){
+                if(ActivityCompat.checkSelfPermission(context, permission)!= PackageManager.PERMISSION_GRANTED){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     protected void onClick(View view) {
