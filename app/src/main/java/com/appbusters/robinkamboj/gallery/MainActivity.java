@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
@@ -34,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
         }
 
-        colorPicker = new ColorPicker(this);
-
-        colorPicker.show();
+        final ColorPicker colorPicker = new ColorPicker(this);
         colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
             @Override
             public void onChooseColor(int position,int color) {
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCancel(){
                 // put code
             }
-        });
+        }).setColumns(5).show();
     }
 
     //Permissions Helper Method
