@@ -13,13 +13,15 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
+
+import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class MainActivity extends AppCompatActivity {
 
     private static int RESULT_LOAD_IMAGE=1;
     private static final int MY_PERMISSIONS= 123;
+    ColorPicker colorPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,21 @@ public class MainActivity extends AppCompatActivity {
         if(!hasPermissions(this, permissions)){
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
         }
+
+        colorPicker = new ColorPicker(this);
+
+        colorPicker.show();
+        colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+            @Override
+            public void onChooseColor(int position,int color) {
+                // put code
+            }
+
+            @Override
+            public void onCancel(){
+                // put code
+            }
+        });
     }
 
     //Permissions Helper Method
@@ -72,4 +89,7 @@ public class MainActivity extends AppCompatActivity {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     }
+
+
+
 }
