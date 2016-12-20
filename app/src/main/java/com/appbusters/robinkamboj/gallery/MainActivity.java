@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
             //String picturepath contains the path of the selected image.
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     }
 }
