@@ -34,19 +34,6 @@ public class MainActivity extends AppCompatActivity {
         if(!hasPermissions(this, permissions)){
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
         }
-
-        final ColorPicker colorPicker = new ColorPicker(this);
-        colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
-            @Override
-            public void onChooseColor(int position,int color) {
-                // put code
-            }
-
-            @Override
-            public void onCancel(){
-                // put code
-            }
-        }).setColumns(5).show();
     }
 
     //Permissions Helper Method
