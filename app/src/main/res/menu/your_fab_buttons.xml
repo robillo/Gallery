@@ -2,22 +2,22 @@
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
             android:id="@+id/Gallery"
-            android:onClick="onClick"
+            android:title="Gallery"
             android:icon="@drawable/faboptions_ic_menu_animatable"/>
 
         <item
             android:id="@+id/Camera"
-            android:onClick="onClick"
+            android:title="Camera"
             android:icon="@drawable/faboptions_ic_menu_animatable" />
 
         <item
             android:id="@+id/txtColor"
-            android:onClick="onClick"
+            android:title="Text Color"
             android:icon="@drawable/faboptions_ic_menu_animatable"/>
 
 
         <item
             android:id="@+id/bgColor"
-            android:onClick="onClick"
+            android:title="Background Color"
             android:icon="@drawable/faboptions_ic_menu_animatable"/>
     </menu>
