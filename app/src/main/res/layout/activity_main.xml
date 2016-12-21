@@ -45,55 +45,17 @@
         android:layout_marginBottom="16dp"
         android:layout_below="@+id/subTitle"
         android:layout_marginTop="15dp"
-        android:scaleX="0.5"
-        android:scaleY="0.5"/>
+        android:scaleX="0.4"
+        android:scaleY="0.4"/>
 
-    <com.github.clans.fab.FloatingActionMenu
-        android:id="@+id/fab"
+    <com.joaquimley.faboptions.FabOptions
+        android:id="@+id/fab_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:src="@drawable/fab_add"
+        android:layout_gravity="bottom"
+        android:onClick="onClick"
+        app:button_menu="@menu/your_fab_buttons"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_centerHorizontal="true" />
 
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/Gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_size="mini"
-            app:fab_label="Gallery"
-            android:src="@drawable/fab_add"
-            android:onClick="onClick"/>
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/Camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_size="mini"
-            app:fab_label="Camera"
-            android:src="@drawable/fab_add"
-            android:onClick="onClick" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/txtColor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_size="mini"
-            app:fab_label="Text Color"
-            android:src="@drawable/fab_add"
-            android:onClick="onClick" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/bgColor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_size="mini"
-            app:fab_label="Background Color"
-            android:src="@drawable/fab_add"
-            android:onClick="onClick" />
-
-    </com.github.clans.fab.FloatingActionMenu>
 </RelativeLayout>

@@ -12,6 +12,8 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -33,19 +35,6 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
         }
 
-        final ColorPicker colorPicker = new ColorPicker(this);
-        colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
-            @Override
-            public void onChooseColor(int position,int color) {
-                // put code
-            }
-
-            @Override
-            public void onCancel(){
-                // put code
-            }
-        }).setColumns(5).show();
-
     }
 
     //Permissions Helper Method
@@ -60,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    protected void onClick(View v) {
-        switch (v.getId()){
+    protected void onClick(MenuItem item) {
+        switch (item.getItemId()){
             case R.id.Gallery:{
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
@@ -76,12 +65,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bgColor:{
                 break;
             }
-            /*
-            case R.id.upload:{
-                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, RESULT_LOAD_IMAGE);
-            }
-            */
         }
     }
 
@@ -100,10 +83,12 @@ public class MainActivity extends AppCompatActivity {
             String picturePath= cursor.getString(columnIndex);
             cursor.close();
 
-            //String picturepath contains the path of the selected image.
+            //String picturePath contains the path of the selected image.
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 
+            imageView.setScaleX((float) 1.0);
+            imageView.setScaleY((float) 1.0);
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     }

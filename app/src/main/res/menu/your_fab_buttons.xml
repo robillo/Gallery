@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/Gallery"
+            android:title="Favorite"
+            android:onClick="onClick"/>
+
+        <item
+            android:id="@+id/Camera"
+            android:title="Message"
+            android:onClick="onClick" />
+
+        <item
+            android:id="@+id/txtColor"
+            android:title="Download"
+            android:onClick="onClick"/>
+
+
+        <item
+            android:id="@+id/bgColor"
+            android:title="Share"
+            android:onClick="onClick" />
+    </menu>

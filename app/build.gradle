@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.3"
     defaultConfig {
         applicationId "com.appbusters.robinkamboj.gallery"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -28,7 +28,7 @@ dependencies {
 
     //colorPicker
     compile 'petrov.kristiyan.colorpicker:colorpicker-library:1.1.2'
-    //FAB Menu
-    compile 'com.github.clans:fab:1.6.4'
+    //Other better FAB menu android arsenal
+    compile 'com.github.joaquimley:faboptions:1.0.2'
     testCompile 'junit:junit:4.12'
 }
