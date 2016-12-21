@@ -46,14 +46,14 @@
         android:layout_below="@+id/subTitle"
         android:layout_marginTop="15dp"
         android:scaleX="0.4"
-        android:scaleY="0.4"/>
+        android:scaleY="0.4"
+        android:layout_above="@+id/fab_options"/>
 
     <com.joaquimley.faboptions.FabOptions
         android:id="@+id/fab_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:onClick="onClick"
         app:button_menu="@menu/your_fab_buttons"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
