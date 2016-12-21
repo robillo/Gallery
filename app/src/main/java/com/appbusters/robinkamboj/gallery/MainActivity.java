@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
@@ -63,10 +62,26 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onClick(View v) {
         switch (v.getId()){
+            case R.id.Gallery:{
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, RESULT_LOAD_IMAGE);
+                break;
+            }
+            case R.id.Camera:{
+                break;
+            }
+            case R.id.txtColor:{
+                break;
+            }
+            case R.id.bgColor:{
+                break;
+            }
+            /*
             case R.id.upload:{
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
             }
+            */
         }
     }
 
@@ -92,7 +107,5 @@ public class MainActivity extends AppCompatActivity {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     }
-
-
 
 }
