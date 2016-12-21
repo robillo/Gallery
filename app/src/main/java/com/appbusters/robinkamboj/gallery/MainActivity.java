@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static int RESULT_LOAD_IMAGE=1;
     private static final int MY_PERMISSIONS= 123;
-    ColorPicker colorPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,20 @@ public class MainActivity extends AppCompatActivity {
         if(!hasPermissions(this, permissions)){
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
         }
+
+        final ColorPicker colorPicker = new ColorPicker(this);
+        colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+            @Override
+            public void onChooseColor(int position,int color) {
+                // put code
+            }
+
+            @Override
+            public void onCancel(){
+                // put code
+            }
+        }).setColumns(5).show();
+
     }
 
     //Permissions Helper Method
@@ -49,8 +62,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onClick(View v) {
-        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(i, RESULT_LOAD_IMAGE);
+        switch (v.getId()){
+            case R.id.upload:{
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, RESULT_LOAD_IMAGE);
+            }
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){

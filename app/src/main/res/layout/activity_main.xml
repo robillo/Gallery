@@ -39,7 +39,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/upload"
         app:srcCompat="@drawable/ss"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -52,11 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/button"
+        android:id="@+id/upload"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/button"
+        android:background="@drawable/button_custom"
         android:onClick="onClick"/>
 </RelativeLayout>
