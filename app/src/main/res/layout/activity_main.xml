@@ -50,6 +50,7 @@
 
     <com.joaquimley.faboptions.FabOptions
         android:id="@+id/fab_options"
+        android:onClick="onClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
