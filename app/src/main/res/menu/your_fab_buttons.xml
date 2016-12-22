@@ -3,21 +3,21 @@
         <item
             android:id="@+id/Gallery"
             android:title="Gallery"
-            android:icon="@drawable/faboptions_ic_menu_animatable"/>
+            android:icon="@android:drawable/ic_menu_gallery"/>
 
         <item
             android:id="@+id/Camera"
             android:title="Camera"
-            android:icon="@drawable/faboptions_ic_menu_animatable" />
+            android:icon="@android:drawable/ic_menu_camera" />
 
         <item
             android:id="@+id/txtColor"
             android:title="Text Color"
-            android:icon="@drawable/faboptions_ic_menu_animatable"/>
+            android:icon="@android:drawable/ic_menu_mylocation"/>
 
 
         <item
             android:id="@+id/bgColor"
             android:title="Background Color"
-            android:icon="@drawable/faboptions_ic_menu_animatable"/>
+            android:icon="@android:drawable/ic_menu_compass"/>
     </menu>
