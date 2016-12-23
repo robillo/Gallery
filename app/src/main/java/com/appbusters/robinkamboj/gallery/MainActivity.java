@@ -17,8 +17,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.joaquimley.faboptions.FabOptions;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,17 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.Gallery: {
-                    Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(i, RESULT_LOAD_IMAGE);
-                    break;
-                }
-            }
-        }
-     */
 
     //Permissions Helper Method
     public static boolean hasPermissions(Context context, String[] permissions){
@@ -95,4 +82,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void buttonOnClick(View v) {
+        switch (v.getId()) {
+            case R.id.fabL2: {
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, RESULT_LOAD_IMAGE);
+                break;
+            }
+        }
+    }
 }
