@@ -23,7 +23,9 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int RESULT_LOAD_IMAGE=1;
+    private static int GALLERY_IMAGE=1;
+    private static int CAMERA_IMAGE=2;
+
     private static final int MY_PERMISSIONS= 123;
     private Boolean FabClosed=true;
     private Animation rotate_forward, rotate_backward, fab_open, fab_close;
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode== RESULT_LOAD_IMAGE && resultCode==RESULT_OK && data!= null){
+        if(requestCode== GALLERY_IMAGE && resultCode==RESULT_OK && data!= null){
             Uri selectedImage= data.getData();
             String[] filePathColumn= { MediaStore.Images.Media.DATA};
 
@@ -133,11 +135,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.fabL2:
             {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, RESULT_LOAD_IMAGE);
+                startActivityForResult(i, GALLERY_IMAGE);
                 break;
             }
             case R.id.fabL:
             {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (i.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(i, CAMERA_IMAGE);
+                }
                 break;
             }
             case R.id.fabR:
