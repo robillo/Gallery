@@ -144,9 +144,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonOnClick(View v) {
 
-
-        Context context= getApplicationContext();
-
         switch (v.getId()) {
             case R.id.fabL2:
             {
