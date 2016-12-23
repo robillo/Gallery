@@ -34,21 +34,28 @@
         android:layout_below="@+id/title"
         android:background="#00000000"
         android:cursorVisible="false"/>
-    <ImageView
-        android:layout_width="wrap_content"
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/imageView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        app:srcCompat="@drawable/ss"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/fab_layout"
         android:layout_below="@+id/subTitle"
-        android:layout_marginTop="15dp"
-        android:layout_above="@+id/fab_layout"/>
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView"
+            app:srcCompat="@drawable/ss"
+            android:scaleType="center"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/phone"
+            android:scaleType="center"/>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
