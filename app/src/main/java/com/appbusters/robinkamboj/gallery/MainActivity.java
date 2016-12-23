@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         subTitle.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
 
 
-        String[] permissions={Manifest.permission.READ_EXTERNAL_STORAGE};
+        String[] permissions={Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
         if(!hasPermissions(this, permissions)){
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
         }
