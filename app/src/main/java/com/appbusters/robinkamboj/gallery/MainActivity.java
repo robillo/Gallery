@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab, fabL, fabR, fabL2, fabR2;
     EditText title,subTitle;
     RelativeLayout background;
+    private int textColor= 0xff00003f;
+    private int bgColor= 0x4e00ff00;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
             imageView.setImageBitmap(imageBitmap);
         }
 
-        imageView.setScaleX((float) 1.0);
-        imageView.setScaleY((float) 1.0);
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        //imageView.setScaleX((float) 1.0);
+        //imageView.setScaleY((float) 1.0);
+        //imageView.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 
     private void animatefab() {
@@ -167,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.fabR:
             {
                 new ChromaDialog.Builder()
-                        .initialColor(Color.GREEN)
+                        .initialColor(textColor)
                         .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
                         .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
                         .onColorSelected(new OnColorSelectedListener() {
@@ -175,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onColorSelected(@ColorInt int color) {
                                 title.setTextColor(color);
                                 subTitle.setTextColor(color);
+                                textColor=color;
                             }
                         })
                         .create()
@@ -184,13 +187,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.fabR2:
             {
                 new ChromaDialog.Builder()
-                        .initialColor(Color.GREEN)
+                        .initialColor(bgColor)
                         .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
                         .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
                         .onColorSelected(new OnColorSelectedListener() {
                             @Override
                             public void onColorSelected(@ColorInt int color) {
                                 background.setBackgroundColor(color);
+                                bgColor= color;
                             }
                         })
                         .create()

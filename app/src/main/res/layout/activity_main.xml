@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#872FFF"
+    android:background="#4e00ff00"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.appbusters.robinkamboj.gallery.MainActivity">
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:hint="TITLE GOES HERE"
         android:textColorHint="#ffffff"
-        android:textColor="#FFFFFF"
+        android:textColor="#ff00003f"
         android:textSize="30sp"
         android:layout_centerHorizontal="true"
         android:id="@+id/title"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:hint="SUBTITLE GOES HERE"
         android:textColorHint="#ffffff"
-        android:textColor="#FFFFFF"
+        android:textColor="#ff00003f"
         android:textSize="15sp"
         android:layout_centerHorizontal="true"
         android:id="@+id/subTitle"
@@ -48,8 +48,6 @@
         android:layout_marginBottom="16dp"
         android:layout_below="@+id/subTitle"
         android:layout_marginTop="15dp"
-        android:scaleX="0.4"
-        android:scaleY="0.4"
         android:layout_above="@+id/fab_layout"/>
 
     <LinearLayout
