@@ -26,8 +26,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
 
-    //colorPicker
-    compile 'petrov.kristiyan.colorpicker:colorpicker-library:1.1.2'
+    //colorPicker (Android Arsenal)
+    compile 'com.pavelsikun:vintage-chroma:1.5'
     
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.1.0'

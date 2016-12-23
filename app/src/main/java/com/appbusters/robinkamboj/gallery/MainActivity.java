@@ -2,6 +2,7 @@ package com.appbusters.robinkamboj.gallery;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -15,17 +16,18 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private static int GALLERY_IMAGE=1;
     private static int CAMERA_IMAGE=2;
+    private static final String TAG="ROBIN";
 
     private static final int MY_PERMISSIONS= 123;
     private Boolean FabClosed=true;
@@ -36,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         EditText title= (EditText) findViewById(R.id.title);
         EditText subTitle= (EditText) findViewById(R.id.subTitle);
@@ -139,6 +140,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonOnClick(View v) {
+
+
+        Context context= getApplicationContext();
+
         switch (v.getId()) {
             case R.id.fabL2:
             {
