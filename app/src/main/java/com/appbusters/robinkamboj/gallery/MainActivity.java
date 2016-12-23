@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
@@ -16,18 +17,20 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.pavelsikun.vintagechroma.ChromaDialog;
+import com.pavelsikun.vintagechroma.IndicatorMode;
+import com.pavelsikun.vintagechroma.colormode.ColorMode;
+
 public class MainActivity extends AppCompatActivity {
 
     private static int GALLERY_IMAGE=1;
     private static int CAMERA_IMAGE=2;
-    private static final String TAG="ROBIN";
 
     private static final int MY_PERMISSIONS= 123;
     private Boolean FabClosed=true;
@@ -161,10 +164,24 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.fabR:
             {
+                new ChromaDialog.Builder()
+                        .initialColor(Color.GREEN)
+                        .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
+                        .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
+                        /*.onColorSelected(color -> do your stuff)*/
+                        .create()
+                        .show(getSupportFragmentManager(), "ChromaDialog");
                 break;
             }
             case R.id.fabR2:
             {
+                new ChromaDialog.Builder()
+                        .initialColor(Color.GREEN)
+                        .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
+                        .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
+                        /*.onColorSelected(color -> do your stuff)*/
+                        .create()
+                        .show(getSupportFragmentManager(), "ChromaDialog");
                 break;
             }
         }
