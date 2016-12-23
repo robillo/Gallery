@@ -23,6 +23,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.pavelsikun.vintagechroma.ChromaDialog;
 import com.pavelsikun.vintagechroma.IndicatorMode;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Animation rotate_forward, rotate_backward, fab_open, fab_close;
     private FloatingActionButton fab, fabL, fabR, fabL2, fabR2;
     EditText title,subTitle;
+    RelativeLayout background;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         //Auto Capitalize all letters of EditTexts
         title.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         subTitle.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-
+        background= (RelativeLayout) findViewById(R.id.activity_main);
 
         String[] permissions={Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
         if(!hasPermissions(this, permissions)){
@@ -185,7 +187,12 @@ public class MainActivity extends AppCompatActivity {
                         .initialColor(Color.GREEN)
                         .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
                         .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
-                        /*.onColorSelected(color -> do your stuff)*/
+                        .onColorSelected(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(@ColorInt int color) {
+                                background.setBackgroundColor(color);
+                            }
+                        })
                         .create()
                         .show(getSupportFragmentManager(), "ChromaDialog");
                 break;
