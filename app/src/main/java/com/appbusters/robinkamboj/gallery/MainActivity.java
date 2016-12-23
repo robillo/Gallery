@@ -84,9 +84,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonOnClick(View v) {
         switch (v.getId()) {
-            case R.id.fabL2: {
+            case R.id.fabL2:
+            {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
+                break;
+            }
+            case R.id.fabL:
+            {
+                break;
+            }
+            case R.id.fabR:
+            {
+                break;
+            }
+            case R.id.fabR2:
+            {
                 break;
             }
         }
