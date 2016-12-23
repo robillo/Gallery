@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
@@ -88,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
         if(requestCode== GALLERY_IMAGE && resultCode==RESULT_OK && data!= null){
             Uri selectedImage= data.getData();
             String[] filePathColumn= { MediaStore.Images.Media.DATA};
@@ -101,13 +105,17 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
 
             //String picturePath contains the path of the selected image.
-            ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
-            imageView.setScaleX((float) 1.0);
-            imageView.setScaleY((float) 1.0);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
+        else if(requestCode== CAMERA_IMAGE && resultCode==RESULT_OK && data!=null){
+            Bundle extras= data.getExtras();
+            Bitmap imageBitmap= (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+        }
+
+        imageView.setScaleX((float) 1.0);
+        imageView.setScaleY((float) 1.0);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 
     private void animatefab() {
