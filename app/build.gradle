@@ -28,7 +28,6 @@ dependencies {
 
     //colorPicker
     compile 'petrov.kristiyan.colorpicker:colorpicker-library:1.1.2'
-    //Other better FAB menu android arsenal
-    compile 'com.github.joaquimley:faboptions:1.0.2'
+    
     testCompile 'junit:junit:4.12'
 }

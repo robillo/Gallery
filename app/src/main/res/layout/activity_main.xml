@@ -50,15 +50,14 @@
         android:layout_marginTop="15dp"
         android:scaleX="0.4"
         android:scaleY="0.4"
-        android:layout_above="@+id/fab_options"/>
+        android:layout_above="@+id/fab_layout"/>
 
-    <com.joaquimley.faboptions.FabOptions
-        android:id="@+id/fab_options"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:button_menu="@menu/your_fab_buttons"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/fab_layout"
+        android:orientation="horizontal">
+
+    </LinearLayout>
 
 </RelativeLayout>

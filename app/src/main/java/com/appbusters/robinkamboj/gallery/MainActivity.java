@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import com.joaquimley.faboptions.FabOptions;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     private static int RESULT_LOAD_IMAGE=1;
     private static final int MY_PERMISSIONS= 123;
@@ -30,25 +30,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         EditText title= (EditText) findViewById(R.id.title);
         EditText subTitle= (EditText) findViewById(R.id.subTitle);
         //Auto Capitalize all letters of EditTexts
         title.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         subTitle.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
 
-        String[] permissions={Manifest.permission.READ_EXTERNAL_STORAGE};
 
+        String[] permissions={Manifest.permission.READ_EXTERNAL_STORAGE};
         if(!hasPermissions(this, permissions)){
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSIONS);
         }
 
-
-        FabOptions fabOptions = (FabOptions) findViewById(R.id.fab_options);
-        fabOptions.setButtonsMenu(this, R.menu.your_fab_buttons);
-        fabOptions.setOnClickListener(this);
     }
 
-    @Override
+    /*
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.Gallery: {
@@ -58,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+     */
 
     //Permissions Helper Method
     public static boolean hasPermissions(Context context, String[] permissions){
