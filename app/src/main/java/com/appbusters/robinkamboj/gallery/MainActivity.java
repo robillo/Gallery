@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.support.annotation.ColorInt;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import android.widget.ImageView;
 
 import com.pavelsikun.vintagechroma.ChromaDialog;
 import com.pavelsikun.vintagechroma.IndicatorMode;
+import com.pavelsikun.vintagechroma.OnColorSelectedListener;
 import com.pavelsikun.vintagechroma.colormode.ColorMode;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,14 +38,15 @@ public class MainActivity extends AppCompatActivity {
     private Boolean FabClosed=true;
     private Animation rotate_forward, rotate_backward, fab_open, fab_close;
     private FloatingActionButton fab, fabL, fabR, fabL2, fabR2;
+    EditText title,subTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText title= (EditText) findViewById(R.id.title);
-        EditText subTitle= (EditText) findViewById(R.id.subTitle);
+        title= (EditText) findViewById(R.id.title);
+        subTitle= (EditText) findViewById(R.id.subTitle);
         //Auto Capitalize all letters of EditTexts
         title.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         subTitle.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
@@ -165,7 +168,13 @@ public class MainActivity extends AppCompatActivity {
                         .initialColor(Color.GREEN)
                         .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
                         .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
-                        /*.onColorSelected(color -> do your stuff)*/
+                        .onColorSelected(new OnColorSelectedListener() {
+                            @Override
+                            public void onColorSelected(@ColorInt int color) {
+                                title.setTextColor(color);
+                                subTitle.setTextColor(color);
+                            }
+                        })
                         .create()
                         .show(getSupportFragmentManager(), "ChromaDialog");
                 break;
